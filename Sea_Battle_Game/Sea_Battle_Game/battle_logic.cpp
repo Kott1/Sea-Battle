@@ -1,13 +1,38 @@
 #include "battle_logic.h"
+#include "ship.h"
 
-Game::Game() : player1(), player2() {
-    // Ініціалізація гри
+Player::Player() {
+    // Реалізація конструктора
 }
 
-void Game::play() {
-    // Головний ігровий цикл
+void Player::setShipsRemain(Ship shipsArray[10]) {
+    // Реалізація методу setShipsRemain
 }
 
-Player Game::determineWinner() const {
-    // Логіка визначення переможця
+void Player::setWonGame(bool isWinner) {
+    // Реалізація методу setWonGame
+}
+
+void Player::setTurn(bool yourTurn) {
+    // Реалізація методу setTurn
+}
+
+void Player::getShipsRemain(Ship shipsArray[10]) {
+    // Реалізація методу getShipsRemain
+}
+
+bool Player::getWonGame() {
+    // Реалізація методу getWonGame
+}
+
+bool Player::getTurn() {
+    // Реалізація методу getTurn
+}
+
+bool Player::isWinner() {
+    // Реалізація методу isWinner
+}
+
+void Player::attack() {
+    // Реалізація методу attack
 }
