@@ -1,19 +1,26 @@
 #ifndef BATTLE_LOGIC_H
 #define BATTLE_LOGIC_H
+#include "ship.h"
 
-#include "Player.h"
-
-class Game {
+class Player {
 private:
-    Player player1, player2;
-    // Статистика, стан гри тощо
+    Ship shipsRemain[10];
+    bool wonGame;
+    bool isYourTurn;
 
 public:
-    Game();
-    void play();
-    Player determineWinner() const;
-    // Інші методи...
+    Player();
+    void setShipsRemain(Ship shipsArray[10]);
+    void setWonGame(bool isWinner);
+    void setTurn(bool yourTurn);
+
+    void getShipsRemain(Ship shipsArray[10]);
+    bool getWonGame();
+    bool getTurn();
+
+    bool isWinner();
+    void attack();
 };
 
-#endif // BATTLE_LOGIC_H
+#endif BATTLE_LOGIC_H
 
