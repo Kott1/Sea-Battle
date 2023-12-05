@@ -4,18 +4,16 @@
 #include <vector>
 #include <iostream>
 
-class GameBoard {
+class GameField {
 private:
-    int width, height;
-    std::vector<std::vector<char>> board;
+    Ship ships[][];
 
     bool isValidPlacement(int x, int y);
 
 public:
-    GameBoard(int width, int height);
+    void printField();
     void generateShips();
     bool checkPlacement();
-    void printBoard();
 };
 
-#endif // FIELD_H
+#endif FIELD_H
