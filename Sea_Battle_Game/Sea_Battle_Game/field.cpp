@@ -1,17 +1,9 @@
 #include "field.h"
 
-bool GameField::isValidPlacement(int x, int y) {
-    //
+void GameField::clearField() {
+	//...
 }
 
-void GameField::generateShips() {
-    //
-}
-
-bool GameField::checkPlacement() {
-    //
-}
-
-void GameField::printField() {
-    //
+bool GameField::isAllShipsSunk() {
+	//...
 }
