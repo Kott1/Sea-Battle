@@ -1,38 +1,59 @@
 #include "battle_logic.h"
 #include "ship.h"
 
-Player::Player() {
-    // Реалізація конструктора
+Player::Player(Ship &shipsArray[10]) {
+    wonGame = false;
+    isYourTurn = false;
+
+    for (int i = 0; i < 10; ++i) {
+        shipsRemain[i] = shipsArray[i];
+    }
 }
 
 void Player::setShipsRemain(Ship shipsArray[10]) {
-    // Реалізація методу setShipsRemain
+    for (int i = 0; i < 10; ++i) {
+        shipsRemain[i] = shipsArray[i];
+    }
 }
 
 void Player::setWonGame(bool isWinner) {
-    // Реалізація методу setWonGame
+    wonGame = isWinner;
 }
 
 void Player::setTurn(bool yourTurn) {
-    // Реалізація методу setTurn
+    isYourTurn = yourTurn;
 }
 
-void Player::getShipsRemain(Ship shipsArray[10]) {
-    // Реалізація методу getShipsRemain
+void Player::getShipsRemain(Ship &shipsArray[10]) {
+    for (int i = 0; i < 10; i++)
+    {
+        shipsArray[i] = shipsRemain[i];
+    }
 }
 
 bool Player::getWonGame() {
-    // Реалізація методу getWonGame
+    return wonGame;
 }
 
 bool Player::getTurn() {
-    // Реалізація методу getTurn
+    return isYourTurn;
 }
 
-bool Player::isWinner() {
-    // Реалізація методу isWinner
+bool Player::isWinner(int &field[10][10]) {
+    for (int i = 0; i < 10; i++)
+    {
+        for (int j = 0; j < 10; j++)
+        {
+            if (field[i][j] != 0 && field[i][j] != -1)
+            {
+                return false;
+            }
+        }
+    }
+
+    return true;
 }
 
 void Player::attack() {
-    // Реалізація методу attack
+
 }
