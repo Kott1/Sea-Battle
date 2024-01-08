@@ -1,24 +1,22 @@
 #ifndef FIELD_H
 #define FIELD_H
 
+#include "ship.h"
 #include <vector>
 #include <iostream>
+using namespace std;
 
 class GameField {
 private:
-    int fieldMarking[10][10] = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 1, 0, 2, 2, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 2, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 2, 0, 0],
-        [0, 0, 0, 4, 4, 4, 4, 0, 0, 0],
-        [0, 0, 3, 0, 0, 0, 0, 0, 0, 1],
-        [0, 0, 3, 0, 0, 3, 3, 3, 0, 0],
-        [0, 0, 3, 0, 2, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 2, 0, 0, 0, 0, 0],
-        [1, 0, 0, 0, 0, 0, 0, 0, 1, 0]];
+    int fieldMarking[10][10];
+
 public:
+    GameField();
+
     void clearField();
     bool isAllShipsSunk();
+    void setShip(Ship ship);
+    void printField();
 };
 
 #endif FIELD_H
