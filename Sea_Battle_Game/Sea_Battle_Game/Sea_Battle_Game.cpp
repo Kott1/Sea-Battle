@@ -1,53 +1,35 @@
 ﻿#include "Sea_Battle_Game.h"
 
-bool Game::getGameEnded() {
-	return gameEnded;
+Game::Game() {
+	gameField_ptr = GameField::GetSingleton();
+	eventManager_ptr = EventManager::getSingleton();
 }
 
-void Game::startGame() {
-	restartGame();
+bool Game::startGame() {
 
-	for (int i = 0; i < 10; i++) {
-		p1Ships.push_back(Ship(i));
-		p2Ships.push_back(Ship(i));
-	}
-
-	p1.setTurn(true);
+	return true;
 }
 
-void Game::endGame() {
-	gameEnded = true;
+bool Game::restartGame() {
+	return true;
 }
 
-void Game::attack() {
+bool Game::stopGame() {
 
+	return true;
 }
 
-void Game::restartGame() {
-	p1Ships.clear();
-	p2Ships.clear();
-	gameEnded = false;
-	p1 = Player();
-	p2 = Player();
-	field1 = GameField();
-	field2 = GameField();
+EventManager* Game::getEventManager() {
+	return eventManager_ptr;
 }
 
-void Game::placeShip(int x, int y, int i, bool vertical) {
-	pair<int, int> xy;
-	xy.first = x;
-	xy.second = y;
-
-	if (p1.getTurn()) {
-		p1Ships[i].setPosition(xy, vertical);
-		field1.setShip(p1Ships[i]);
-	}
-	else {
-		p2Ships[i].setPosition(xy, vertical);
-		field2.setShip(p2Ships[i]);
-	}
+GameField* Game::getGameField() {
+	return gameField_ptr;
 }
 
-void Game::print() {
-	field1.printField();
+Game* Game::getSingleton() {
+	if (!inst) inst = new Game();
+	return inst;
 }
+
+Game* Game::inst = nullptr;
