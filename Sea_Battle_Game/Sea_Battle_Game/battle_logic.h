@@ -1,25 +1,24 @@
-#ifndef BATTLE_LOGIC_H
-#define BATTLE_LOGIC_H
-#include "ship.h"
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #include <vector>
-using namespace std;
+#include "baseShip.h"
 
-class Player {
+class Player
+{
 private:
-    bool wonGame;
-    bool isYourTurn;
+    std::vector<std::vector<int>> Field;
+    std::vector<BaseShip*> Ships;
 
+    bool CanPlace(Vec2 Pos, int size, bool isHorizontal);
 public:
-    Player();
+    const char* name;
 
-    void setWonGame(bool isWinner);
-    void setTurn(bool yourTurn);
+    void PlaceShip(Vec2 Pos, bool IsHorizontal, BaseShip* NewShip);
+    BaseShip* HitCell(Vec2 Pos);
 
-    Ship getShip(int i);
-    bool getWonGame();
-    bool getTurn();
+    bool Shoot(Player* target, Vec2 Pos);
 
-    //bool isWinner(int field[10][10]);
+    Player(int nid);
 };
-
-#endif BATTLE_LOGIC_H
+#endif
