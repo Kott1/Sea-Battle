@@ -6,7 +6,7 @@ Game::Game() {
 }
 
 bool Game::startGame() {
-
+	eventManager_ptr->triggerEvent(OnGameStart, nullptr);
 	return true;
 }
 
@@ -15,7 +15,7 @@ bool Game::restartGame() {
 }
 
 bool Game::stopGame() {
-
+	eventManager_ptr->triggerEvent(OnGameStop, nullptr);
 	return true;
 }
 
