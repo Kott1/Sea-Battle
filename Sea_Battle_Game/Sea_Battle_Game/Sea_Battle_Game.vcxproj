@@ -128,16 +128,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="battle_logic.cpp" />
+    <ClCompile Include="eventManager.cpp" />
     <ClCompile Include="field.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Sea_Battle_Game.cpp" />
-    <ClCompile Include="ship.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="baseShip.h" />
     <ClInclude Include="battle_logic.h" />
+    <ClInclude Include="eventManager.h" />
     <ClInclude Include="field.h" />
     <ClInclude Include="Sea_Battle_Game.h" />
-    <ClInclude Include="ship.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
