@@ -1,5 +1,4 @@
 #include "Sea_Battle_Game.h"
-
 #include <iostream>
 #include <Windows.h>
 
@@ -30,4 +29,6 @@ int main()
 
 	world->startGame();
 	world->stopGame();
+  
+  return 0;
 }
