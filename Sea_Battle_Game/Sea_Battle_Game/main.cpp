@@ -1,34 +1,34 @@
 #include "Sea_Battle_Game.h"
-#include "ship.h"
-#include "battle_logic.h"
-#include "field.h"
-using namespace std;
+#include <iostream>
+#include <Windows.h>
 
-int main() {
-	Game game;
-	Ship ship;
-	Player player;
-	GameField field;
+void initPlayerShips(Player* player)
+{
 
-	//pair<int, int> i = {0, 0};
-	//i.first++;
-	//i.second++;
+}
 
-	//cout << i.first << ", " << i.second;
+void destroyAllTargets(Player* player1, Player* player2)
+{
 
-	while (!game.getGameEnded()) {
-		game.startGame();
+}
 
-		game.placeShip(0, 0, 0, true);
-		game.placeShip(2, 2, 4, false);
-		game.placeShip(5, 3, 7, false);
-		game.placeShip(2, 8, 9, true);
+int main()
+{
+	Game* world = Game::getSingleton();
+	EventManager* event_manager = world->getEventManager();
 
-		game.print();
+	GameField* game_field = world->getGameField();
 
-		game.endGame();
-		//game.restartGame();
-	}
+	Player* player1 = game_field->GetPlayer1();
+	Player* player2 = game_field->GetPlayer2();
 
-	return 0;
+	initPlayerShips(player1);
+	initPlayerShips(player2);
+
+	destroyAllTargets(player1, player2);
+
+	world->startGame();
+	world->stopGame();
+  
+  return 0;
 }
