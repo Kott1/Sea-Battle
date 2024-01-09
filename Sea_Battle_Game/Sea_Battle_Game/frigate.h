@@ -5,10 +5,11 @@
 
 class ShipFrigate : public BaseShip {
 public:
-	ShipFrigate() {
-		health = 2;
-		name = "Frigate";
-	}
+    ShipFrigate() {
+        health = 2;
+        size = 2;
+        name = "Frigate";
+    }
 };
 
 #endif

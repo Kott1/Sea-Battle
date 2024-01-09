@@ -5,10 +5,11 @@
 
 class ShipCruiser : public BaseShip {
 public:
-	ShipCruiser() {
-		health = 3;
-		name = "Cruiser";
-	}
+    ShipCruiser() {
+        health = 3;
+        size = 3;
+        name = "Cruiser";
+    }
 };
 
 #endif

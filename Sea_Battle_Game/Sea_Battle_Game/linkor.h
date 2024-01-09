@@ -5,10 +5,11 @@
 
 class ShipLinkor : public BaseShip {
 public:
-	ShipLinkor() {
-		health = 4;
-		name = "Linkor";
-	}
+    ShipLinkor() {
+        health = 4;
+        size = 4;
+        name = "Linkor";
+    }
 };
 
 #endif
